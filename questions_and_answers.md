@@ -177,6 +177,39 @@ category_title     |avg_rating|
 -------------------|----------|
 Film & Animation   |      6.87|
 
+#### Which category has the highest average rating based on likes?
+
+````sql
+SELECT category_title,
+       Avg(rating) AS avg_rating
+FROM   (SELECT c.*,
+               Round(( ( likes - min_likes ) * 100 ) / ( max_likes - min_likes )
+               , 0) AS
+                      rating
+        FROM   (SELECT DISTINCT video_id,
+                                title,
+                                snippettitle                  AS category_title,
+                                likes,
+                                Max(likes)
+                                  OVER (
+                                    partition BY category_id) AS max_likes,
+                                Min(likes)
+                                  OVER (
+                                    partition BY category_id) AS min_likes
+                FROM   yt_trending_videos a
+                       INNER JOIN yt_category_map b
+                               ON a.category_id = b.id) c) d
+GROUP  BY category_title
+ORDER  BY avg_rating DESC
+````
+
+**Results:**
+
+
+category_title     |avg_rating|
+-------------------|----------|
+Travel & Events    |     49.22|
+
 
 
 
