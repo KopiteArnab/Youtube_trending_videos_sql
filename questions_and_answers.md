@@ -144,6 +144,40 @@ country         |no_of_videos|
 Great Britain   |          14|
 
 
+#### We have determined that the Likes to dislikes ratio is a good indicator of popularity. We have to come up with a rating framework to the videos based on the available metrics, which would help us recommend videos better.
+
+#### What is the average rating of the category Music?
+
+````sql
+SELECT category_title,
+       Avg(rating) AS avg_rating
+FROM   (SELECT c.*,
+               Round(( ( views - min_views ) * 100 ) / ( max_views - min_views )
+               , 0) AS
+                      rating
+        FROM   (SELECT DISTINCT video_id,
+                                title,
+                                snippettitle                  AS category_title,
+                                views,
+                                Max(views)
+                                  OVER (
+                                    partition BY category_id) AS max_views,
+                                Min(views)
+                                  OVER (
+                                    partition BY category_id) AS min_views
+                FROM   yt_trending_videos a
+                       INNER JOIN yt_category_map b
+                               ON a.category_id = b.id) c) d
+GROUP  BY category_title 
+````
+
+**Results:**
+
+category_title     |avg_rating|
+-------------------|----------|
+Film & Animation   |      6.87|
+
+
 
 
 
