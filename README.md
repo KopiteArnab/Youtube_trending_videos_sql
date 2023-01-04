@@ -7,11 +7,17 @@ YouTube’s trending videos vary by location across the world. The impact of lik
 * [Data Analysis Question & Answers](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/400e1d35e4ac99b6cc741bf2b63d8c60fbbd4860/questions_and_answers.md)
 
 ## Datasets used
-Three key [datasets] for this case study
+There are 3 tables available for the analysis
 - [YT_trending_videos.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/359de9d5f813821b2a7b70bb70400c24807775b9/YT_trending_videos.csv):    YT_trending_videos: This table has video level information along with dates on which videos were trending along with metrics such as comments, likes, views, etc.
 - [YT_channel_map.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/400e1d35e4ac99b6cc741bf2b63d8c60fbbd4860/YT_channel_map.csv):
 YT_channel_map: This table has channel_id mapping with the channel title which is also interpreted as channel name
 - [YT_category_map.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/d050acda7e27b27464e18d4178d8a9be7767910d/YT_category_map.csv):    YT_category_map: This table has category_id mapping. The videos on YouTube are mapped to a category based on the type of video such as Movie, trailer, animation, etc.
+
+## Data Dictionary
+
+![image](https://user-images.githubusercontent.com/93368813/210610966-8073ac16-e612-430d-9a14-a040aba090a3.png)
+![image](https://user-images.githubusercontent.com/93368813/210611012-50763ae1-17be-4594-964e-ea4e20c86d86.png)
+![image](https://user-images.githubusercontent.com/93368813/210611045-d77106d0-675f-4c79-add2-6790990e4dbb.png)
 
 
 
