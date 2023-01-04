@@ -9,5 +9,5 @@ YouTube’s trending videos vary by location across the world. The impact of lik
 ## Datasets used
 Three key [datasets] for this case study
 - [YT_trending_videos.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/359de9d5f813821b2a7b70bb70400c24807775b9/YT_trending_videos.csv):    YT_trending_videos: This table has video level information along with dates on which videos were trending along with metrics such as comments, likes, views, etc.
-- <strong>chicago_crimes_2021.csv</strong>: Reported crimes in 2021.
-- <strong>chicago_temps_2021.csv</strong>: Average city temperatures.
+- [YT_channel_map.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/359de9d5f813821b2a7b70bb70400c24807775b9/YT_trending_videos.csv):    YT_channel_map: This table has channel_id mapping with the channel title which is also interpreted as channel name
+- [YT_category_map.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/359de9d5f813821b2a7b70bb70400c24807775b9/YT_trending_videos.csv):    YT_category_map: This table has category_id mapping. The videos on YouTube are mapped to a category based on the type of video such as Movie, trailer, animation, etc.
