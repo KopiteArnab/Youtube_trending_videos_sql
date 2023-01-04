@@ -8,6 +8,6 @@ YouTube’s trending videos vary by location across the world. The impact of lik
 
 ## Datasets used
 Three key [datasets] for this case study
--<strong>YT_trending_videos.csv</strong(https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/359de9d5f813821b2a7b70bb70400c24807775b9/YT_trending_videos.csv): YT_trending_videos: This table has video level information along with dates on which videos were trending along with metrics such as comments, likes, views, etc.
+[YT_trending_videos.csv](https://github.com/KopiteArnab/Youtube_trending_videos_sql/blob/359de9d5f813821b2a7b70bb70400c24807775b9/YT_trending_videos.csv): YT_trending_videos: This table has video level information along with dates on which videos were trending along with metrics such as comments, likes, views, etc.
 - <strong>chicago_crimes_2021.csv</strong>: Reported crimes in 2021.
 - <strong>chicago_temps_2021.csv</strong>: Average city temperatures.
