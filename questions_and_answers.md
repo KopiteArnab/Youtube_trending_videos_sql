@@ -72,4 +72,48 @@ snippettitle|no_of_videos|
 ------------|------------|
 Music       |         299|
 
+#### Normally it is believed if the video trends for more number of days, then the video views, likes and comments also is higher. We need to check whether this is true for all the videos.
+
+#### What are the total views for category sports in ‘Canada’?
+
+````sql
+SELECT snippettitle AS category_title,
+       country,
+       Sum(total_views)  AS total_views,
+       Sum(total_likes)  AS total_likes,
+       Avg(no_of_days_trended) AS avg_trending_days
+FROM   (SELECT video_id,
+               title,
+               snippettitle,
+               country,
+               Sum(views) AS total_views,
+       	    Sum(likes) AS total_likes,
+               Count(trending_date) AS no_of_days_trended
+        FROM   yt_trending_videos a
+               INNER JOIN yt_category_map b
+                       ON a.category_id = b.id
+        GROUP  BY video_id,
+                  title,
+                  snippettitle,
+                  country ) c
+WHERE  country = 'Canada'
+       AND snippettitle = 'Sports'
+GROUP  BY snippettitle,
+          country
+ORDER  BY country,
+          avg_trending_days DESC 
+````
+
+**Results:**
+
+
+category_title|country|total_views|total_likes|avg_trending_days|
+--------------|-------|-----------|-----------|-----------------|
+Sports        | Canada| 33,007,445|  1,069,155|             1.29|
+
+
+
+
+
+
 
