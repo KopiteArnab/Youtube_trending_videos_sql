@@ -13,10 +13,16 @@ FROM   (SELECT video_id,
                country,
                Count(trending_date) AS no_of_days_trended
         FROM   yt_trending_videos
-        GROUP  BYvideo_id,
+        GROUP  BY video_id,
                   title,
                   country) a
 WHERE  no_of_days_trended > 5
        AND country = 'US'
 GROUP  BY country 
 ````
+
+**Results:**
+
+country|no_of_videos|
+-------|------------|
+battery|       39988|
