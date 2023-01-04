@@ -52,4 +52,24 @@ category_title|avg_trending_days|
 --------------|-----------------|
 Music         |             7.37|
 
+#### How many distinct videos trended from the category ‘Music’ on weekdays (Monday - Friday)?
+
+````sql
+SELECT snippettitle,
+ Count(DISTINCT video_id) AS no_of_videos
+FROM   yt_trending_videos a
+       INNER JOIN yt_category_map b
+               ON a.category_id = b.id
+WHERE  Weekday(trending_date) BETWEEN 0 AND 4
+       AND snippettitle = 'Music'
+GROUP  BY snippettitle 
+````
+
+**Results:**
+
+
+snippettitle|no_of_videos|
+------------|------------|
+Music       |         299|
+
 
