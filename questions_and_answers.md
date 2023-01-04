@@ -111,6 +111,40 @@ category_title|country|total_views|total_likes|avg_trending_days|
 --------------|-------|-----------|-----------|-----------------|
 Sports        | Canada| 33,007,445|  1,069,155|             1.29|
 
+#### Which country has the highest number of videos with rank for views and rank of likes both in top 20?
+
+````sql
+SELECT country,
+       Count(video_id) AS no_of_videos
+FROM   (SELECT video_id,
+               title,
+               country,
+               views,
+               likes,
+               Rank()
+                 OVER (
+                   partition BY country
+                   ORDER BY views DESC) AS rank_views,
+               Rank()
+                 OVER (
+                   partition BY country
+                   ORDER BY likes DESC) AS rank_likes
+        FROM   yt_trending_videos) a
+WHERE  rank_views <= 20
+       AND rank_likes <= 20
+GROUP  BY country
+ORDER  BY no_of_videos DESC 
+````
+
+**Results:**
+
+
+country         |no_of_videos|
+----------------|------------|
+Great Britain   |          14|
+
+
+
 
 
 
