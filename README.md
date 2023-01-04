@@ -15,9 +15,12 @@ YT_channel_map: This table has channel_id mapping with the channel title which i
 
 ## Data Dictionary
 
-YT_trending_videos![sqlp1](https://user-images.githubusercontent.com/93368813/210611443-77fa7805-071e-498a-9d26-064f530cbe3a.png)
-
-
+YT_trending_videos
+![sqlp1](https://user-images.githubusercontent.com/93368813/210611558-2e8a416a-bdd6-4c77-a01e-8ef9c2b5919b.png)
+YT_channel_map
+![sqlp2](https://user-images.githubusercontent.com/93368813/210611795-280cd92c-3a47-48db-b029-8f69d0b401db.png)
+YT_category_map
+![sqlp3](https://user-images.githubusercontent.com/93368813/210611875-aead0f56-1d93-4ea9-a78a-8307018e10a4.png)
 
 
 ## Entity Relationship Diagram
