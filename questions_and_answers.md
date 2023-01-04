@@ -25,4 +25,4 @@ GROUP  BY country
 
 country|no_of_videos|
 -------|------------|
-battery|       39988|
+US     |         388|
